@@ -12,10 +12,8 @@ import jakarta.validation.constraints.NotNull;
 import java.time.LocalDate;
 
 @Entity
-@Table(name = Avaliacao.TABLE_NAME)
+@Table(name = "avaliacao")
 public class Avaliacao {
-    
-    private static final String TABLE_NAME = "avaliacao";
 
 
     @Id
