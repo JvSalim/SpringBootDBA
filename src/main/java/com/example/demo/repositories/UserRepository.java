@@ -7,6 +7,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
+import com.example.demo.DTO.DTOINDIC.IngressoCountDTO;
 import com.example.demo.DTO.DTOINDIC.UserCountDTO;
 import com.example.demo.models.Compra;
 import com.example.demo.models.Notificacao;

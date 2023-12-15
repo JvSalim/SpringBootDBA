@@ -11,6 +11,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.example.demo.DTO.DTOCLASS.NotificacaoDTO;
+import com.example.demo.DTO.DTOINDIC.IngressoCountDTO;
+import com.example.demo.DTO.DTOINDIC.UserCountDTO;
 import com.example.demo.DTO.DTOMapper.NotificacaoMapper;
 import com.example.demo.models.Notificacao;
 import com.example.demo.models.User;
@@ -75,4 +77,7 @@ public class NotificacaoService {
             throw new RuntimeException("Não foi possível deletar a notificação: " + id);
         }
     }
+    
+
+    
 }
