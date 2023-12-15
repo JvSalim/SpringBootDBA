@@ -108,6 +108,12 @@ public class UserController {
         return ResponseEntity.ok().body(notificacoesNaoLidas);
     }
 
+    @GetMapping("/quantidadeUsuarios")
+    public ResponseEntity<Long> obterQuantidadeUsuarios() {
+       Long obj = userService.getTotalUsuariosCount();
+       return ResponseEntity.ok().body(obj);
+    }
+
 
     
 

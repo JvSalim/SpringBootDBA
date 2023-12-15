@@ -165,6 +165,10 @@ public Notificacao createNotificacao(Notificacao notificacao, Long userId) {
                 .filter(notificacao -> !notificacao.isLida())
                 .collect(Collectors.toList());
     }
+
+    public Long getTotalUsuariosCount() {
+        return userRepository.getTotalUsuariosCount();
+    }
     
 
 

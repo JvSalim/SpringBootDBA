@@ -49,6 +49,10 @@ public interface UserRepository extends JpaRepository<User, Long> {
     
     @Query("SELECT n FROM User u JOIN u.notificacoes n WHERE u.id = :userId")
     List<Notificacao> findNotificacoesByUserId(@Param("userId") Long userId);
+
+    @Query("SELECT new com.example.demo.DTO.DTOINDIC.UserCountDTO(count(u.id)) FROM User u")
+    Long getTotalUsuariosCount();
+
     
     User findByEmail(String email);
     

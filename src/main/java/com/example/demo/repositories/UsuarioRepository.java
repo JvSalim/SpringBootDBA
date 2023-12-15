@@ -9,7 +9,4 @@ import org.springframework.data.jpa.repository.Query;
 @Repository
 public interface UsuarioRepository extends JpaRepository<User, Long> {
 
-    @Query("SELECT new com.example.demo.DTO.DTOINDIC.UserCountDTO(count(u.id)) FROM User u")
-    Long getTotalUsuariosCount();
-
 }

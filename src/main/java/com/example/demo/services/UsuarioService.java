@@ -17,7 +17,5 @@ public class UsuarioService {
         this.usuarioRepository = usuarioRepository;
     }
 
-    public Long getTotalUsuariosCount() {
-        return usuarioRepository.getTotalUsuariosCount();
-    }
+
 }

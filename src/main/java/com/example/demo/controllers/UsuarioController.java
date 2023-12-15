@@ -19,9 +19,5 @@ public class UsuarioController {
         this.usuarioService = usuarioService;
     }
 
-    @GetMapping("/quantidadeUsuarios")
-    public ResponseEntity<Long> obterQuantidadeUsuarios() {
-       Long obj = usuarioService.getTotalUsuariosCount();
-       return ResponseEntity.ok().body(obj);
-    }
+
 }
