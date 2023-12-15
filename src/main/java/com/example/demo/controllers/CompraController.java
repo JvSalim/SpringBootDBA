@@ -109,6 +109,6 @@ public class CompraController {
      @GetMapping("/quantidadeComprasConcluidas")
     public ResponseEntity<CompraCountDTO> getTotalCompras() {
         CompraCountDTO totalCompras = compraService.getTotalCompras();
-        return ResponseEntity.ok(totalCompras);
+        return ResponseEntity.ok().body(totalCompras);
     }
 }
