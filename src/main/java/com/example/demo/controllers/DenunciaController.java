@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import com.example.demo.DTO.DTOCLASS.DenunciaDTO;
+import com.example.demo.DTO.DTOINDIC.DenunciaCountDTO;
+import com.example.demo.DTO.DTOINDIC.IngressoCountDTO;
 import com.example.demo.DTO.DTOMapper.DenunciaMapper;
 import com.example.demo.models.Denuncia;
 import com.example.demo.services.DenunciaService;
@@ -76,4 +78,13 @@ public class DenunciaController {
 
         return ResponseEntity.noContent().build();
     }
+
+    @GetMapping("/quantidadeDenuncias")
+    public ResponseEntity<DenunciaCountDTO> obterQuantidadeUsuarios() {
+        DenunciaCountDTO obj = denunciaService.countTotalDenuncias();
+       return ResponseEntity.ok().body(obj);
+    }
+    
+
+
 }

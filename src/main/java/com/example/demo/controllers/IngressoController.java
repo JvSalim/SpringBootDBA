@@ -131,7 +131,7 @@ public class IngressoController {
     }
 
     @GetMapping("/valorIngressos")
-    public ResponseEntity<ValorCountDTO> sumTotalValorIngressos() {
+    public ResponseEntity<ValorCountDTO> somarTotalValorIngressos() {
         ValorCountDTO obj = ingressoService.sumTotalValorIngressos();
        return ResponseEntity.ok().body(obj);
     }

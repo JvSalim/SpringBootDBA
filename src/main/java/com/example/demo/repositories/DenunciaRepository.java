@@ -7,6 +7,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
+import com.example.demo.DTO.DTOINDIC.DenunciaCountDTO;
 import com.example.demo.models.Denuncia;
 
 
@@ -17,5 +18,8 @@ public interface DenunciaRepository extends JpaRepository<Denuncia, Long> {
     
     @Query(value = "SELECT d FROM Denuncia d WHERE d.user.id = :user_id")
     List<Denuncia> findPeloUserID(@Param("user_id") Long id);
+
+    @Query("SELECT new com.example.demo.DTO.DTOINDIC.DenunciaCountDTO(count(d.id)) FROM Denuncia d")
+    DenunciaCountDTO countTotalDenuncias();
     
 }

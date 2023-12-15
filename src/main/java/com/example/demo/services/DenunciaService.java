@@ -9,6 +9,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.example.demo.DTO.DTOCLASS.DenunciaDTO;
+import com.example.demo.DTO.DTOINDIC.DenunciaCountDTO;
+import com.example.demo.DTO.DTOINDIC.ValorCountDTO;
 import com.example.demo.DTO.DTOMapper.DenunciaMapper;
 import com.example.demo.models.Denuncia;
 import com.example.demo.models.DenunciaStatus;
@@ -76,6 +78,9 @@ public class DenunciaService {
         }
     }
 
+     public DenunciaCountDTO countTotalDenuncias() {
+        return denunciaRepository.countTotalDenuncias();
+    }
     
     
 
