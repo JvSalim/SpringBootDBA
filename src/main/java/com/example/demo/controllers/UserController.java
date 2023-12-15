@@ -111,7 +111,7 @@ public class UserController {
 
     @GetMapping("/quantidadeUsuarios")
     public ResponseEntity<UserCountDTO> obterQuantidadeUsuarios() {
-       UserCountDTO obj = userService.getTotalUsuariosCount();
+        UserCountDTO obj = userService.getTotalUsuariosCount();
        return ResponseEntity.ok().body(obj);
     }
 
