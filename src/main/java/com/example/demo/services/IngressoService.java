@@ -9,6 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.example.demo.DTO.DTOCLASS.IngressoDto;
 import com.example.demo.DTO.DTOINDIC.IngressoCountDTO;
+import com.example.demo.DTO.DTOINDIC.ValorCountDTO;
 import com.example.demo.DTO.DTOMapper.IngressoMapper;
 import com.example.demo.models.Ingresso;
 import com.example.demo.models.IngressoStatus;
@@ -85,6 +86,10 @@ public class IngressoService {
  
     public IngressoCountDTO countTotalIngressos() {
         return ingressoRepository.countTotalIngressos();
+    }
+
+    public ValorCountDTO sumTotalValorIngressos() {
+        return ingressoRepository.sumTotalValorIngressos();
     }
 
 }

@@ -1,5 +1,6 @@
 package com.example.demo.DTO.DTOINDIC;
 
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -8,14 +9,9 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor   
 
+public class ValorCountDTO {
 
-
-public class DTOUSERS {
-    
-    private int usuarios;
+    private double valor;
 
     
-
-
-
 }

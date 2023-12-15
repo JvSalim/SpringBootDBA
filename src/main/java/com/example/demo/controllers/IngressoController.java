@@ -14,6 +14,7 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import com.example.demo.DTO.DTOCLASS.IngressoDto;
 import com.example.demo.DTO.DTOINDIC.IngressoCountDTO;
 import com.example.demo.DTO.DTOINDIC.UserCountDTO;
+import com.example.demo.DTO.DTOINDIC.ValorCountDTO;
 import com.example.demo.models.Ingresso;
 import com.example.demo.DTO.DTOMapper.IngressoMapper;
 
@@ -126,6 +127,12 @@ public class IngressoController {
     @GetMapping("/quantidadeIngressos")
     public ResponseEntity<IngressoCountDTO> obterQuantidadeUsuarios() {
         IngressoCountDTO obj = ingressoService.countTotalIngressos();
+       return ResponseEntity.ok().body(obj);
+    }
+
+    @GetMapping("/valorIngressos")
+    public ResponseEntity<ValorCountDTO> sumTotalValorIngressos() {
+        ValorCountDTO obj = ingressoService.sumTotalValorIngressos();
        return ResponseEntity.ok().body(obj);
     }
 }
