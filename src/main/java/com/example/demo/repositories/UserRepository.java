@@ -7,6 +7,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
+import com.example.demo.DTO.DTOINDIC.UserCountDTO;
 import com.example.demo.models.Compra;
 import com.example.demo.models.Notificacao;
 import com.example.demo.models.User;
@@ -51,7 +52,7 @@ public interface UserRepository extends JpaRepository<User, Long> {
     List<Notificacao> findNotificacoesByUserId(@Param("userId") Long userId);
 
     @Query("SELECT new com.example.demo.DTO.DTOINDIC.UserCountDTO(count(u.id)) FROM User u")
-    Long getTotalUsuariosCount();
+    UserCountDTO getTotalUsuariosCount();
 
     
     User findByEmail(String email);

@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.example.demo.DTO.DTOCLASS.UserDTO;
+import com.example.demo.DTO.DTOINDIC.UserCountDTO;
 import com.example.demo.DTO.DTOMapper.UserMapper;
 import com.example.demo.models.Compra;
 import com.example.demo.models.Notificacao;
@@ -166,7 +167,7 @@ public Notificacao createNotificacao(Notificacao notificacao, Long userId) {
                 .collect(Collectors.toList());
     }
 
-    public Long getTotalUsuariosCount() {
+    public UserCountDTO getTotalUsuariosCount() {
         return userRepository.getTotalUsuariosCount();
     }
     

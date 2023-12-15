@@ -19,6 +19,7 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import com.example.demo.DTO.DTOMapper.UserMapper;
 import com.example.demo.DTO.DTOCLASS.UserDTO;
+import com.example.demo.DTO.DTOINDIC.UserCountDTO;
 import com.example.demo.models.Notificacao;
 import com.example.demo.models.User;
 import com.example.demo.models.User.CreateUser;
@@ -109,8 +110,8 @@ public class UserController {
     }
 
     @GetMapping("/quantidadeUsuarios")
-    public ResponseEntity<Long> obterQuantidadeUsuarios() {
-       Long obj = userService.getTotalUsuariosCount();
+    public ResponseEntity<UserCountDTO> obterQuantidadeUsuarios() {
+       UserCountDTO obj = userService.getTotalUsuariosCount();
        return ResponseEntity.ok().body(obj);
     }
 
