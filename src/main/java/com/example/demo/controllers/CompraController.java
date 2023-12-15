@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import com.example.demo.DTO.DTOCLASS.CompraDTO;
+import com.example.demo.DTO.DTOINDIC.CompraCountDTO;
 import com.example.demo.DTO.DTOMapper.CompraMapper;
 import com.example.demo.models.Compra;
 import com.example.demo.services.CompraService;
@@ -103,5 +104,11 @@ public class CompraController {
         }else{
             throw new Exception("Mes invalido, tente novamente");
         }
+    }
+
+     @GetMapping("/quantidadeComprasConcluidas")
+    public ResponseEntity<CompraCountDTO> getTotalCompras() {
+        CompraCountDTO totalCompras = compraService.getTotalCompras();
+        return ResponseEntity.ok(totalCompras);
     }
 }

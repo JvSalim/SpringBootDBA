@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.example.demo.DTO.DTOCLASS.CompraDTO;
+import com.example.demo.DTO.DTOINDIC.CompraCountDTO;
 import com.example.demo.DTO.DTOMapper.CompraMapper;
 import com.example.demo.models.Compra;
 import com.example.demo.models.StatusCompra;
@@ -98,6 +99,10 @@ public class CompraService {
 
     public Double sumValorIngressosPorMes(int mes){
         return this.compraRepository.sumValorIngressosPorMes(mes);
+    }
+
+    public CompraCountDTO getTotalCompras() {
+        return compraRepository.countTotalCompras();
     }
 
 }

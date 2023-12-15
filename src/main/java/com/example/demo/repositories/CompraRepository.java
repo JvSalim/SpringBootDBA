@@ -10,6 +10,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
+import com.example.demo.DTO.DTOINDIC.CompraCountDTO;
 import com.example.demo.models.Compra;
 
 public interface CompraRepository extends JpaRepository<Compra, Long>{
@@ -29,6 +30,9 @@ public interface CompraRepository extends JpaRepository<Compra, Long>{
 
     @Query("SELECT COALESCE(SUM(c.ingresso.valor), 0) FROM Compra c WHERE MONTH(c.data) = :mes")
     Double sumValorIngressosPorMes(@Param("mes") int mes);
+
+     @Query("SELECT new com.example.demo.DTO.DTOINDIC.CompraCountDTO(count(c.id)) FROM Compra c WHERE c.status = 'PAGAMENTO_EFETUADO'")
+    CompraCountDTO countTotalCompras();
 
     
 }
