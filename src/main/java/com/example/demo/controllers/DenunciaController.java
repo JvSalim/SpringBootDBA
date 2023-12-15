@@ -80,7 +80,7 @@ public class DenunciaController {
     }
 
     @GetMapping("/quantidadeDenuncias")
-    public ResponseEntity<DenunciaCountDTO> obterQuantidadeUsuarios() {
+    public ResponseEntity<DenunciaCountDTO> obterQuantidadeDenuncias() {
         DenunciaCountDTO obj = denunciaService.countTotalDenuncias();
        return ResponseEntity.ok().body(obj);
     }
